@@ -1,9 +1,7 @@
 #include <iostream>
-#include <cstdlib>
-#include <cmath>
 
 bool isPalindrome(int num) {
-    int original = num;
+    const int original = num;
     int reversed = 0;
     while (num > 0) {
         reversed = reversed * 10 + num % 10;
@@ -17,7 +15,7 @@ int main() {
     std::cout << "Enter the range [A, B]: ";
     std::cin >> A >> B;
 
-    int* palindromicSquares = new int[B - A + 1]; // initialize dynamic array with the maximum possible size
+    const auto palindromicSquares = new int[B - A + 1]; // initialize dynamic array with the maximum possible size
     int count = 0;
 
     for (int i = A; i <= B; ++i) {

@@ -4,7 +4,7 @@
 #include <limits>
 
 // Function to calculate the length of a segment
-double Length(double x1, double y1, double x2, double y2) {
+double Length(const double x1, const double y1, const double x2, double const y2) {
     return std::sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
 }
 
@@ -23,8 +23,7 @@ int main() {
     for (int i = 0; i < N; ++i) {
         double x1, y1, x2, y2;
         inputFile >> x1 >> y1 >> x2 >> y2;
-        double length = Length(x1, y1, x2, y2);
-        if (length > maxLength) {
+        if (const double length = Length(x1, y1, x2, y2); length > maxLength) {
             maxLength = length;
         }
     }
@@ -34,4 +33,4 @@ int main() {
     std::cout << "The longest segment length is: " << maxLength << std::endl;
 
     return 0;
-}*/
+}

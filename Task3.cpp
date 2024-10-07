@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 
-double Exp1(double x, double epsilon) {
+double Exp1(double const x, double const epsilon) {
     double term = 1.0;
     double sum = term;
     int n = 1;
@@ -23,13 +23,13 @@ int main() {
     std::cin >> x;
 
     std::cout << "Enter six values of epsilon: ";
-    for (int i = 0; i < 6; ++i) {
-        std::cin >> epsilons[i];
+    for (double & epsilon : epsilons) {
+        std::cin >> epsilon;
     }
 
-    for (int i = 0; i < 6; ++i) {
-        double result = Exp1(x, epsilons[i]);
-        std::cout << "exp(" << x << ") with epsilon " << epsilons[i] << " is " << result << std::endl;
+    for (const double epsilon : epsilons) {
+        const double result = Exp1(x, epsilon);
+        std::cout << "exp(" << x << ") with epsilon " << epsilon << " is " << result << std::endl;
     }
 
     return 0;

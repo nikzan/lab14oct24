@@ -9,8 +9,8 @@ int main() {
     double results[5];
 
     std::cout << "Enter five numbers: ";
-    for (int i = 0; i < 5; ++i) {
-        std::cin >> numbers[i];
+    for (double & number : numbers) {
+        std::cin >> number;
     }
 
     for (int i = 0; i < 5; ++i) {
@@ -18,8 +18,8 @@ int main() {
     }
 
     std::cout << "The cubes of the entered numbers are: ";
-    for (int i = 0; i < 5; ++i) {
-        std::cout << results[i] << " ";
+    for (double const result : results) {
+        std::cout << result << " ";
     }
     std::cout << std::endl;
 

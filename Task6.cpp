@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 int basePToDecimal(int X, int P) {
     int decimalValue = 0;
